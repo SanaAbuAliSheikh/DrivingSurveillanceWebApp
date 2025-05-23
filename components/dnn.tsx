@@ -11,6 +11,10 @@ type Model = {
   id: number;
   name: string;
   description: string;
+  basicDesc: string;
+  domain: string;
+  purpose: string;
+  link: string;
   isOpenSource: boolean;
 };
 
@@ -35,7 +39,7 @@ export default function DNN() {
   const [currentModel, setCurrentModel] = useState<Model>();
 
   useEffect(() => {
-    fetchData(10, 1, "");
+    fetchData(2, 1, "");
   }, []);
 
   const sortedModels = [...models]
@@ -72,11 +76,11 @@ export default function DNN() {
   const handleSearch = (search: string) => {
     setSearch(search);
 
-    fetchData(10, 1, search);
+    fetchData(2, 1, search);
   }
 
   const handlePageChange = (pageNo: number) => {
-    fetchData(10, pageNo, search)
+    fetchData(2, pageNo, search)
   }
 
   return (

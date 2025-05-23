@@ -21,6 +21,10 @@ type Model = {
   id: number;
   name: string;
   description: string;
+  basicDesc: string;
+  domain: string;
+  purpose: string;
+  link: string;
   isOpenSource: boolean;
 };
 
@@ -83,9 +87,10 @@ const TableComp = (props: TableStruct) => {
                     <tr key={model.id} >
                         <td>{index + 1}</td>
                         <td>{model.name}</td>
-                        <td>{model?.description && model?.description?.length > 50
+                        {/* <td>{model?.description && model?.description?.length > 50
                             ? model?.description?.slice(0, 115) + '...'
-                            : model?.description}</td>
+                            : model?.description}</td> */}
+                        <td>{model?.basicDesc}</td>
                         <td >{model.isOpenSource ? <Badge pill bg="primary" style={{ fontWeight: 7 }}>
                             Open Source
                         </Badge> : <Badge pill bg="secondary" style={{ fontWeight: 7 }}>Propreitary</Badge>}</td>
